@@ -1,0 +1,32 @@
+on:
+  push:
+    branches:
+      - master
+  
+jobs:
+  deploy:
+    run-on: ubuntu-latest
+    step:
+     - uses: actions/checkout/v2
+
+     - name: Install Node Js
+       uses: actions/setup-node@v1
+       with:
+        node-version: "14.x"
+
+     - name: Install Depency
+       run: npm install
+
+     - name: Build app
+       run: npm run build
+
+     - name: Deploy to Hosting
+       uses: appleboy/scp-action@master
+       with: 
+        host: 103.147.154.86
+        username: yopijuni
+        password: 8C71+nIPkKvd7:
+        port: 64000
+        source: "build"
+        target: "/home/yopijuni/public_html"
+       
