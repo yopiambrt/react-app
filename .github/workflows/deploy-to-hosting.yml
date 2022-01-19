@@ -29,4 +29,5 @@ jobs:
         port: 64000
         source: "build"
         target: "/home/yopijuni/public_html"
+        strip_components: 1
        
