@@ -5,9 +5,9 @@ on:
   
 jobs:
   deploy:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-     - uses: actions/checkout/v2
+     - uses: actions/checkout@v2
 
      - name: Install Node Js
        uses: actions/setup-node@v1
@@ -25,7 +25,7 @@ jobs:
        with: 
         host: 103.147.154.86
         username: yopijuni
-        password: 8C71+nIPkKvd7
+        password: 8C71+nIPkKvd7:
         port: 64000
         source: "build"
         target: "/home/yopijuni/public_html"
